@@ -10,6 +10,7 @@ class Game:
 
         pg.init()
         self.janela = pg.display.set_mode(size=(WIN_WIDTH, WIN_HEIGTH))
+        pg.display.set_caption('Combate Espacial')
 
     def run(self,):
         while True:

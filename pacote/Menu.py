@@ -17,12 +17,17 @@ class Menu():
         pg.mixer_music.play(-1)
         while True:
             self.janela.blit(source=self.surf, dest=self.rect)
-            self.menu_texto(100, 'Combate', COLOR_BLUE, ((WIN_WIDTH / 2), 30))
-            self.menu_texto(80, 'Espacial', COLOR_BLUE, ((WIN_WIDTH / 2), 90))
+            self.menu_texto(100, 'Combate', COLOR_BLUE, ((WIN_WIDTH / 2), 40))
+            self.menu_texto(80, 'Espacial', COLOR_BLUE, ((WIN_WIDTH / 2), 100))
 
             for i in range(len(MENU_OPCOES)):
-                self.menu_texto(30, MENU_OPCOES[i], COLOR_WHITE, ((WIN_WIDTH / 2), 500 + 40 * i))
+                self.menu_texto(
+                    30, MENU_OPCOES[i], COLOR_WHITE, ((WIN_WIDTH / 2), 500 + 40 * i))
 
+            self.menu_texto(30, 'TIAGO VIEIRA', COLOR_WHITE,
+                            ((WIN_WIDTH / 1.2), 720))
+            self.menu_texto(30, 'RU:2822630', COLOR_WHITE, ((WIN_WIDTH / 1.2), 745))
+            
             pg.display.flip()
             # checa os eventos
             for event in pg.event.get():
