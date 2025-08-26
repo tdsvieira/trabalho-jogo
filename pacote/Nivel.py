@@ -1,6 +1,7 @@
 import random
 import sys
 from pygame.font import Font
+from pacote.EntityMediator import EntityMediator
 from pacote.Entity import Entity
 from pacote.EntityFactory import EntityFactory
 import pygame as pg
@@ -46,6 +47,10 @@ class Nivel:
             self.level_texto(
                 14, f'entidades: {len(self.entity_list)}', COLOR_WHITE, (10, WIN_HEIGHT - 20))
             pg.display.flip()
+            # colisões
+            EntityMediator.verificar_colisao(entity_list=self.entity_list)
+            EntityMediator.verificar_health(entity_list=self.entity_list)
+
         pass
 
     def level_texto(self, tamanho: int, texto: str, text_color: tuple, posicao: tuple):

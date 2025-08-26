@@ -8,7 +8,6 @@ class Inimigo(Entity):
 
 
     def mover(self):
-        self.rect.centerx -= ENTIDADE_SPEED[self.nome]  
-        if self.rect.right <= 0:
-            self.rect.left = WIN_WIDTH
-        pass
+        self.rect.centerx -= ENTIDADE_SPEED[self.nome]
+          
+        
