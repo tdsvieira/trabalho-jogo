@@ -16,7 +16,7 @@ class Menu():
     def __init__(self, janela):
         # desenhei as imagens
         self.janela = janela
-        self.surf = pg.image.load('./arquivo/menu.png')
+        self.surf = pg.image.load('./arquivo/menu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
