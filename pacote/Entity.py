@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import pygame as pg
 
-from pacote.constante import ENTIDADE_HEALTH
+from pacote.constante import ENTIDADE_DANO, ENTIDADE_HEALTH, ENTIDADE_SCORE
 
 
 class Entity(ABC):
@@ -11,6 +11,9 @@ class Entity(ABC):
         self.rect = self.surf.get_rect(left=posicao[0], top=posicao[1])
         self.speed = 0
         self.health = ENTIDADE_HEALTH[self.nome]
+        self.dano = ENTIDADE_DANO[self.nome]
+        self.score = ENTIDADE_SCORE[self.nome]
+        self.lest_dmg = 'None'
 
     @abstractmethod
     def mover(self, ):

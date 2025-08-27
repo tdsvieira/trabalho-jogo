@@ -4,9 +4,9 @@ from pygame import Rect
 import pygame as pg
 
 from pacote.constante import (
-    COLOR_BLUE,
-    COLOR_GREEN,
-    COLOR_WHITE,
+    C_BLUE,
+    C_GREEN,
+    C_WHITE,
     MENU_OPCOES,
     WIN_WIDTH
 )
@@ -25,29 +25,29 @@ class Menu():
         pg.mixer_music.play(-1)
         while True:
             self.janela.blit(source=self.surf, dest=self.rect)
-            self.menu_texto(80, 'Combate', COLOR_BLUE, ((WIN_WIDTH / 2), 40))
-            self.menu_texto(50, 'Espacial', COLOR_BLUE, ((WIN_WIDTH / 2), 100))
+            self.menu_texto(80, 'Combate', C_BLUE, ((WIN_WIDTH / 2), 40))
+            self.menu_texto(50, 'Espacial', C_BLUE, ((WIN_WIDTH / 2), 100))
 
             for i in range(len(MENU_OPCOES)):
                 if i == menu_opcoes:
                     self.menu_texto(
                             30,
                             MENU_OPCOES[i],
-                            COLOR_GREEN,
+                            C_GREEN,
                             ((WIN_WIDTH / 2), 280 + 40 * i)
                         )
                 else:
                     self.menu_texto(
                             30,
                             MENU_OPCOES[i],
-                            COLOR_WHITE,
+                            C_WHITE,
                             ((WIN_WIDTH / 2), 280 + 40 * i)
                         )
 
             # o titulo de cima
-            self.menu_texto(30, 'TIAGO VIEIRA', COLOR_WHITE,
+            self.menu_texto(30, 'TIAGO VIEIRA', C_WHITE,
                             ((WIN_WIDTH / 1.2), 450))
-            self.menu_texto(30, 'RU:2822630', COLOR_WHITE,
+            self.menu_texto(30, 'RU:2822630', C_WHITE,
                             ((WIN_WIDTH / 1.2), 480))
             
             pg.display.flip()

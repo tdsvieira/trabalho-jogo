@@ -7,7 +7,7 @@ from pacote.Entity import Entity
 from pacote.EntityFactory import EntityFactory
 from pacote.Inimigo import Inimigo
 from pacote.Player import Player
-from pacote.constante import COLOR_WHITE, EVENTO_INIMIGO, MENU_OPCOES, SPAWN_INIMIGO, WIN_HEIGHT
+from pacote.constante import C_PURPLE, C_WHITE, C_YELLOW, EVENTO_INIMIGO, MENU_OPCOES, SPAWN_INIMIGO, WIN_HEIGHT
 
 
 class Nivel:
@@ -37,6 +37,10 @@ class Nivel:
                     tiro = ent.atirar()
                     if tiro is not None:
                         self.entity_list.append(tiro)
+                if ent.nome == 'player1':
+                    self.level_texto(14, f'player1 - Vida:{ent.health} | Pontuação: {ent.score}', C_YELLOW, (10, 20))
+                if ent.nome == 'player2':
+                    self.level_texto(14, f'player2 - Vida:{ent.health} | Pontuação: {ent.score}', C_PURPLE, (10, 30))
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit()
@@ -44,13 +48,13 @@ class Nivel:
                 if event.type == EVENTO_INIMIGO:
                     choice = random.choice(('inimigo1', 'inimigo2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
-
+                
             self.level_texto(
-                14, f'Nivel: {self.nome}- Timeout: {self.timeout / 1000 :.1f}s', COLOR_WHITE, (10, 5))
+                14, f'Nivel: {self.nome}- Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))
             self.level_texto(
-                14, f'fps: {clock.get_fps() :.0f}', COLOR_WHITE, (10, WIN_HEIGHT - 35))
+                14, f'fps: {clock.get_fps() :.0f}', C_WHITE, (10, WIN_HEIGHT - 35))
             self.level_texto(
-                14, f'entidades: {len(self.entity_list)}', COLOR_WHITE, (10, WIN_HEIGHT - 20))
+                14, f'entidades: {len(self.entity_list)}', C_WHITE, (10, WIN_HEIGHT - 20))
             pg.display.flip()
             # colisões
             EntityMediator.verificar_colisao(entity_list=self.entity_list)

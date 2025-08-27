@@ -1,9 +1,11 @@
 import pygame as pg
 
 # C
-COLOR_BLUE = (46, 119, 153)
-COLOR_WHITE = (255, 255, 255)
-COLOR_GREEN = (76, 216, 49)
+C_BLUE = (46, 119, 153)
+C_WHITE = (255, 255, 255)
+C_GREEN = (76, 216, 49)
+C_YELLOW = (221, 242, 33)
+C_PURPLE = (178, 39, 237)
 # E
 EVENTO_INIMIGO = pg.USEREVENT + 1
 ENTIDADE_SPEED = {'imagem0': 0, 'imagem1': 1, 'imagem2': 2,
@@ -25,11 +27,43 @@ ENTIDADE_HEALTH = {
     'inimigo2': 60,
     'inimigo2tiro': 1,
 }
-ENTIDADE_TIRO_DELAY = {
-    'player1': 70,
-    'player2': 50,
+ENTIDADE_SCORE = {
+    'imagem0': 0,
+    'imagem1': 0,
+    'imagem2': 0,
+    'imagem3': 0,
+    'player1': 0,
+    'player1tiro': 0,
+    'player2': 0,
+    'player2tiro': 0,
     'inimigo1': 100,
-    'inimigo2': 200,
+    'inimigo1tiro': 0,
+    'inimigo2': 125,
+    'inimigo2tiro': 0,
+
+
+}
+
+ENTIDADE_TIRO_DELAY = {
+    'player1': 30,
+    'player2': 10,
+    'inimigo1': 70,
+    'inimigo2': 90,
+}
+ENTIDADE_DANO = {
+    'imagem0': 0,
+    'imagem1': 0,
+    'imagem2': 0,
+    'imagem3': 0,
+    'player1': 1,
+    'player1tiro': 25,
+    'player2': 1,
+    'player2tiro': 20,
+    'inimigo1': 1,
+    'inimigo1tiro': 20,
+    'inimigo2': 1,
+    'inimigo2tiro': 15,
+
 }
 # P
 PLAYER_KEY_UP = {'player1': pg.K_UP,
