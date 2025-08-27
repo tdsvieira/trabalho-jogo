@@ -1,11 +1,12 @@
 import random
 import sys
+import pygame as pg
 from pygame.font import Font
 from pacote.EntityMediator import EntityMediator
 from pacote.Entity import Entity
 from pacote.EntityFactory import EntityFactory
-import pygame as pg
-
+from pacote.Inimigo import Inimigo
+from pacote.Player import Player
 from pacote.constante import COLOR_WHITE, EVENTO_INIMIGO, MENU_OPCOES, SPAWN_INIMIGO, WIN_HEIGHT
 
 
@@ -32,6 +33,10 @@ class Nivel:
             for ent in self.entity_list:
                 self.janela.blit(source=ent.surf, dest=ent.rect)
                 ent.mover()
+                if isinstance(ent, (Player, Inimigo)):
+                    tiro = ent.atirar()
+                    if tiro is not None:
+                        self.entity_list.append(tiro)
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit()

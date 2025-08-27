@@ -6,9 +6,11 @@ COLOR_WHITE = (255, 255, 255)
 COLOR_GREEN = (76, 216, 49)
 # E
 EVENTO_INIMIGO = pg.USEREVENT + 1
-ENTIDADE_SPEED = {'imagem0': 0, 'imagem1': 1, 'imagem2': 2, 
-                  'imagem3': 3, 'player1': 5, 'player2': 5,
-                  'inimigo1': 3, 'inimigo2': 2}
+ENTIDADE_SPEED = {'imagem0': 0, 'imagem1': 1, 'imagem2': 2,
+                  'imagem3': 3, 'player1': 5, 'player1tiro': 8,
+                  'player2': 5, 'player2tiro': 9, 'inimigo1': 3,
+                  'inimigo2': 2, 'inimigo1tiro': 5, 'inimigo2tiro': 2
+                  }
 ENTIDADE_HEALTH = {
     'imagem0': 999,
     'imagem1': 999,
@@ -23,7 +25,12 @@ ENTIDADE_HEALTH = {
     'inimigo2': 60,
     'inimigo2tiro': 1,
 }
-
+ENTIDADE_TIRO_DELAY = {
+    'player1': 70,
+    'player2': 50,
+    'inimigo1': 100,
+    'inimigo2': 200,
+}
 # P
 PLAYER_KEY_UP = {'player1': pg.K_UP,
                  'player2': pg.K_w}
