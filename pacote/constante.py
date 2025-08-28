@@ -7,17 +7,26 @@ C_GREEN = (76, 216, 49)
 C_YELLOW = (221, 242, 33)
 C_PURPLE = (178, 39, 237)
 # E
+EVENTO_TIMEOUT = pg.USEREVENT + 2
+
 EVENTO_INIMIGO = pg.USEREVENT + 1
-ENTIDADE_SPEED = {'imagem0': 0, 'imagem1': 1, 'imagem2': 2,
-                  'imagem3': 3, 'player1': 5, 'player1tiro': 8,
-                  'player2': 5, 'player2tiro': 9, 'inimigo1': 3,
-                  'inimigo2': 2, 'inimigo1tiro': 5, 'inimigo2tiro': 2
+
+ENTIDADE_SPEED = {'imageml1bg0': 0, 'imageml1bg1': 1, 'imageml1bg2': 2,
+                  'imageml1bg3': 3, 'imageml2bg0': 0, 'imageml2bg1': 1,
+                  'imageml2bg2': 2, 'imageml2bg3': 3, 'player1': 5, 
+                  'player1tiro': 9, 'player2': 5, 'player2tiro': 9, 
+                  'inimigo1': 3, 'inimigo2': 2, 'inimigo1tiro': 5, 
+                  'inimigo2tiro': 4
                   }
 ENTIDADE_HEALTH = {
-    'imagem0': 999,
-    'imagem1': 999,
-    'imagem2': 999,
-    'imagem3': 999,
+    'imageml1bg0': 999,
+    'imageml1bg1': 999,
+    'imageml1bg2': 999,
+    'imageml1bg3': 999,
+    'imageml2bg0': 999,
+    'imageml2bg1': 999,
+    'imageml2bg2': 999,
+    'imageml2bg3': 999,
     'player1': 300,
     'player1tiro': 1,
     'player2': 300,
@@ -28,10 +37,14 @@ ENTIDADE_HEALTH = {
     'inimigo2tiro': 1,
 }
 ENTIDADE_SCORE = {
-    'imagem0': 0,
-    'imagem1': 0,
-    'imagem2': 0,
-    'imagem3': 0,
+    'imageml1bg0': 0,
+    'imageml1bg1': 0,
+    'imageml1bg2': 0,
+    'imageml1bg3': 0,
+    'imageml2bg0': 0,
+    'imageml2bg1': 0,
+    'imageml2bg2': 0,
+    'imageml2bg3': 0,
     'player1': 0,
     'player1tiro': 0,
     'player2': 0,
@@ -45,16 +58,20 @@ ENTIDADE_SCORE = {
 }
 
 ENTIDADE_TIRO_DELAY = {
-    'player1': 30,
+    'player1': 10,
     'player2': 10,
     'inimigo1': 70,
-    'inimigo2': 90,
+    'inimigo2': 80,
 }
 ENTIDADE_DANO = {
-    'imagem0': 0,
-    'imagem1': 0,
-    'imagem2': 0,
-    'imagem3': 0,
+    'imageml1bg0': 0,
+    'imageml1bg1': 0,
+    'imageml1bg2': 0,
+    'imageml1bg3': 0,
+    'imageml2bg0': 0,
+    'imageml2bg1': 0,
+    'imageml2bg2': 0,
+    'imageml2bg3': 0,
     'player1': 1,
     'player1tiro': 25,
     'player2': 1,
@@ -65,6 +82,10 @@ ENTIDADE_DANO = {
     'inimigo2tiro': 15,
 
 }
+# M
+MENU_OPCOES = ('NOVO JOGO 1P', 'NOVO JOGO 2P - COOPERATIVO',
+               'NOVO JOGO 2P - COMPETITIVO', 'PONTUAÇÃO', 'SAIR')
+
 # P
 PLAYER_KEY_UP = {'player1': pg.K_UP,
                  'player2': pg.K_w}
@@ -75,13 +96,14 @@ PLAYER_KEY_LEFT = {'player1': pg.K_LEFT,
 PLAYER_KEY_RIGHT = {'player1': pg.K_RIGHT,
                     'player2': pg.K_d}
 PLAYER_KEY_SHOOT = {'player1': pg.K_RCTRL,
-                    'player2': pg.K_LCTRL}
+                    'player2': pg.K_LCTRL,
+                    }
 
-# M
-MENU_OPCOES = ('NOVO JOGO 1P', 'NOVO JOGO 2P - COOPERATIVO',
-               'NOVO JOGO 2P - COMPETITIVO', 'PONTUAÇÃO', 'SAIR')
 # S
-SPAWN_INIMIGO = 2500
+SPAWN_INIMIGO = 1000
+# T
+TIMEOUT_NIVEL = 20000  # 20s
+TIMEOUT_STEP = 100  # 100 ms
 # W
 WIN_WIDTH = 512
 WIN_HEIGHT = 512

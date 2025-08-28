@@ -18,8 +18,12 @@ class Game:
             menu = Menu(self.janela)
             menu_retorno = menu.run()
             if menu_retorno in [MENU_OPCOES[0], MENU_OPCOES[1], MENU_OPCOES[2]]:
-                nivel = Nivel(self.janela, 'Nivel1', menu_retorno)
-                nivel_retorno = nivel.run()
+                player_score = [0, 0] # [player1, player2]
+                nivel = Nivel(self.janela, 'Nivel1', menu_retorno, player_score)
+                nivel_retorno = nivel.run(player_score)
+                if nivel_retorno:
+                    nivel = Nivel(self.janela, 'Nivel2', menu_retorno, player_score)
+                    nivel_retorno = nivel.run(player_score)
             elif menu_retorno == MENU_OPCOES[4]:
                 pg.quit()
                 quit()

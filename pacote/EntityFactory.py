@@ -10,11 +10,17 @@ class EntityFactory:
     @staticmethod
     def get_entity(entity_nome: str, posicao=(0, 0)):
         match entity_nome:
-            case 'imagem':
+            case 'imageml1bg':
                 lista_nu = []
                 for i in range(4):
-                    lista_nu.append(Background(f'imagem{i}', (0, 0)))
-                    lista_nu.append(Background(f'imagem{i}', (WIN_WIDTH, 0)))
+                    lista_nu.append(Background(f'imageml1bg{i}', (0, 0)))
+                    lista_nu.append(Background(f'imageml1bg{i}', (WIN_WIDTH, 0)))
+                return lista_nu
+            case 'imageml2bg':
+                lista_nu = []
+                for i in range(4):
+                    lista_nu.append(Background(f'imageml2bg{i}', (0, 0)))
+                    lista_nu.append(Background(f'imageml2bg{i}', (WIN_WIDTH, 0)))
                 return lista_nu
             case 'player1':
                 return Player('player1', (10, WIN_HEIGHT / 2 - 30))
