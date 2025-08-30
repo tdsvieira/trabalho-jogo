@@ -65,16 +65,14 @@ class Nivel:
                             if isinstance(ent, Player) and ent.nome == 'player2':
                                 player_score[1] = ent.score
                         return True
-
                 found_player = False
                 for ent in self.entity_list:
                     if isinstance(ent, Player):
                         found_player = True
-
                 if not found_player:
                     return False
             self.level_texto(
-                14, f'Nivel: {self.nome}- Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))
+                14, f'Nivel: {self.nome} - Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10, 5))
             self.level_texto(
                 14, f'fps: {clock.get_fps() :.0f}', C_WHITE, (10, WIN_HEIGHT - 35))
             self.level_texto(

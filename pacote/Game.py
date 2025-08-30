@@ -3,6 +3,7 @@ import pygame as pg  # renomeei o pygame para pg
 
 from pacote.Menu import Menu
 from pacote.Nivel import Nivel
+from pacote.Score import Score
 from pacote.constante import MENU_OPCOES, WIN_HEIGHT, WIN_WIDTH
 
 
@@ -15,6 +16,7 @@ class Game:
 
     def run(self,):
         while True:
+            score = Score(self.janela)
             menu = Menu(self.janela)
             menu_retorno = menu.run()
             if menu_retorno in [MENU_OPCOES[0], MENU_OPCOES[1], MENU_OPCOES[2]]:
@@ -24,6 +26,10 @@ class Game:
                 if nivel_retorno:
                     nivel = Nivel(self.janela, 'Nivel2', menu_retorno, player_score)
                     nivel_retorno = nivel.run(player_score)
+                    if nivel_retorno:
+                        score.save(menu_retorno, player_score)
+            elif menu_retorno == MENU_OPCOES[3]:
+                score.show()
             elif menu_retorno == MENU_OPCOES[4]:
                 pg.quit()
                 quit()
