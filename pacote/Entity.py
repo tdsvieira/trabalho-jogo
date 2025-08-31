@@ -16,5 +16,5 @@ class Entity(ABC):
         self.lest_dmg = 'None'
 
     @abstractmethod
-    def mover(self, ):
+    def mover(self):
         pass

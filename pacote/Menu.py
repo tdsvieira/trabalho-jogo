@@ -19,7 +19,7 @@ class Menu():
         self.surf = pg.image.load('./arquivo/menu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
-    def run(self, ):
+    def run(self):
         menu_opcoes = 0
         pg.mixer_music.load('./arquivo/musica_menu.wav')
         pg.mixer_music.play(-1)

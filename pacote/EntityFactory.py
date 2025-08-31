@@ -8,7 +8,7 @@ from pacote.constante import WIN_HEIGHT, WIN_WIDTH
 class EntityFactory:
 
     @staticmethod
-    def get_entity(entity_nome: str, posicao=(0, 0)):
+    def get_entity(entity_nome: str,):
         match entity_nome:
             case 'Nivel1bg':
                 lista_nu = []

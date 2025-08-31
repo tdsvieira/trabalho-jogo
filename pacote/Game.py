@@ -1,3 +1,4 @@
+import sys
 import pygame as pg  # renomeei o pygame para pg
 
 
@@ -34,4 +35,5 @@ class Game:
                 pg.quit()
                 quit()
             else:
-                pass 
+                pg.quit()
+                sys.exit()

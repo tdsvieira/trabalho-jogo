@@ -28,4 +28,7 @@ class Player(Entity):
             pressed_key = pg.key.get_pressed()
             if pressed_key[PLAYER_KEY_SHOOT[self.nome]]:
                 return PlayerTiro(nome=f'{self.nome}tiro', posicao=(self.rect.centerx, self.rect.centery))
-            
+            else:
+                return None
+        else:
+            return None    

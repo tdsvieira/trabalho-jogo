@@ -22,9 +22,10 @@ class Score:
         while True:
             self.janela.blit(source=self.surf, dest=self.rect)
             self.score_texto(48, 'VOCE GANHOU!!', C_YELLOW, SCORE_POS['Title'])
+            texto = 'Jogador 1 Digite seu nome:(4 digitos):'
+            score = player_score[0]
             if game_mode == MENU_OPCOES[0]:
-                score = player_score[0] 
-                texto = 'Jogador 1 Digite seu nome:(4 digitos):'
+                score = player_score[0]
             if game_mode == MENU_OPCOES[1]:
                 score = (player_score[0] + player_score[1]) / 2
                 texto = 'Digite o nome do time:(4 digitos):'
@@ -63,9 +64,10 @@ class Score:
         db_proxy = DBproxy('DBScore')
         list_score = db_proxy.retrieve_top10()
         db_proxy.close()
-        for  player_score in list_score:
+        
+        for player_score in list_score:
             id_, name, score, date = player_score
-            self.score_texto(20, f'{name}     {score:05d}     {date}', C_WHITE,
+            self.score_texto(20, f'{name}     {int(score):05d}     {date}', C_WHITE,
                             SCORE_POS[list_score.index(player_score)])
         while True:
             for event in pg.event.get():
